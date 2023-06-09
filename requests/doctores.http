@@ -1,0 +1,47 @@
+
+@api=http://localhost:3000/Doctores
+@registry=http://localhost:3000/firstRegistry
+
+GET {{api}}
+
+
+###
+POST {{api}}
+Content-Type: application/json
+
+{
+    "correo": "sdfsffsdf@gmail.com",
+    "username": "sffc",
+    "contraseña" : "fsfsfs"
+}
+
+
+###
+GET {{api}}/1
+
+###
+DELETE {{api}}/6
+
+###
+GET {{api}}/count
+
+
+###
+PUT {{api}}/1002
+Content-Type: application/json
+
+{
+    "correo": "simituneado@gmail.com",
+    "username": "saaa",
+    "contraseña" : "similon"
+}
+
+POST {{registry}}
+
+Content-Type: application/json
+{
+    "username":"dd",
+    "password":"chocolate",
+    "name":"jose",
+    "email":"jose@gmail.com"
+}
