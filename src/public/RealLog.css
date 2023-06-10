@@ -1,0 +1,13 @@
+
+.formaa{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    background-color: aqua;
+}
+.forma{
+    display: grid;
+
+    grid-column: 1fr;
+    width: 50%;
+}

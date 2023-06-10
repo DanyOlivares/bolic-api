@@ -1,8 +1,8 @@
 import sql from 'mssql'
 
 const dbSettings={
-    user: "wellmind",
-    password:"password",
+    user: "demo",
+    password:"demo",
     server:"localhost",
     database: "Bolic",
     options:{
