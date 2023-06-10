@@ -2,6 +2,12 @@
 @api=http://localhost:3000/Doctores
 @registry=http://localhost:3000/firstRegistry
 
+@prueba=http://localhost:3000/userprueba
+
+GET {{prueba}}
+
+###
+
 GET {{api}}
 
 

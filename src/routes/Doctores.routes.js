@@ -1,5 +1,5 @@
 import {Router} from 'express'
-import {actDoctorbyId, actProductbyId, addDoctor, deleteDoctorbyId, getDoctorbyID, getDoctores,getProductbyId, getTotalDoctors,addusername,firstRegistry} from '../controllers/Doctores.controller'
+import {actDoctorbyId, actProductbyId, addDoctor, deleteDoctorbyId, getDoctorbyID, getDoctores,getProductbyId, getTotalDoctors,addusername,firstRegistry,getUserNames} from '../controllers/Doctores.controller'
 
 
 const router= Router()
@@ -7,6 +7,8 @@ const router= Router()
 router.get('/Doctores',getDoctores)
 
 router.post('/userprueba',addusername)
+
+router.get('/userprueba',getUserNames)
 
 router.post('/firstRegistry',firstRegistry)
 
