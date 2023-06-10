@@ -108,19 +108,30 @@ export const addusername = async(req, res) =>{
 
 
 export const firstRegistry = async(req, res) =>{
-    const {username,password,name,email}=req.body
-    if((username||password||name||email)== null){
+    const {username,password,name,email,father,mother,cellphone,age,weight,height,DrID}=req.body
+
+    if((username||password||name||email||father||mother||age||weight||height||DrID||cellphone)=== null){
         return res.status(400).json({msg: "MAL request, llena todo porfa"})
     }
     try{
+        console.log(username)
+        console.log(email)
         const pool= await getConnection()
-        const result=await pool.request().input('username',sql.VarChar,username)
+        const result=await pool.request()
+        .input('username',sql.VarChar,username)
         .input('password',sql.VarChar,password)
         .input('name',sql.VarChar,name)
         .input('email',sql.VarChar,email)
+        .input('father',sql.VarChar,father)
+        .input('mother',sql.VarChar,mother)
+        .input('cellphone',sql.VarChar,cellphone)
+        .input('age',sql.Int,age)
+        .input('weight',sql.Int,weight)
+        .input('height',sql.Int,height)
+        .input('DrId',sql.Int,DrID)
         .query(queries.firstRegister)
         console.log(result)
-        res.json({username, password, name, email})
+        res.json({username,password,name,email,father,mother,age,weight,height,DrID})
     }
     catch(error){
         res.status(500)

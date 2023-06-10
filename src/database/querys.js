@@ -7,7 +7,7 @@ export const queries= {
     updateDoctorbyId: "UPDATE Doctor set correo=@correo, username=@username, contraseña=@contraseña where ID =@ID",
     //queries que se usaran ya
     addUserpr:"INSERT INTO prueba (username) values (@username)",
-    firstRegister: "insert into paciente (correo,username,contraseña,nombre,apellidoP, apellidoM,telefono,edad,peso,altura,drID) values (@email,@username,@password,@name,@father, @mother, @age, @weight, @height, @DrId)",
+    firstRegister: "insert into paciente (correo,username,contraseña,nombre,apellidoP, apellidoM,telefono,edad,peso,altura,drID) values (@email,@username,@password,@name,@father, @mother,@cellphone, @age, @weight, @height, @DrId)"
     
     
 

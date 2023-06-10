@@ -10,9 +10,9 @@ POST {{api}}
 Content-Type: application/json
 
 {
-    "correo": "sdfsffsdf@gmail.com",
-    "username": "sffc",
-    "contraseña" : "fsfsfs"
+    "correo": "svfgh@gmail.com",
+    "username": "fdg",
+    "contraseña" : "hg"
 }
 
 
@@ -36,12 +36,20 @@ Content-Type: application/json
     "contraseña" : "similon"
 }
 
+###
 POST {{registry}}
-
 Content-Type: application/json
+
 {
-    "username":"dd",
-    "password":"chocolate",
-    "name":"jose",
-    "email":"jose@gmail.com"
+  "username": "ejemplo2",
+  "password": "ejempl2",
+  "name": "sdsd",
+  "email": "ssvcxvf@correo.com",
+  "father": "vc",
+  "mother": "vfv",
+  "cellphone": "celvfvflphone",
+  "age": 30,
+  "weight": 70,
+  "height": 175,
+  "DrID": 1
 }
