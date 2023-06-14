@@ -8,7 +8,11 @@ export const queries= {
     //queries que se usaran ya
     addUserpr:"INSERT INTO prueba (username) values (@username)",
     getUserNames: "select * from prueba",
-    firstRegister: "insert into paciente (correo,username,contraseña,nombre,apellidoP, apellidoM,telefono,edad,peso,altura,drID) values (@email,@username,@password,@name,@father, @mother,@cellphone, @age, @weight, @height, @DrId)"
+    firstRegister: "insert into paciente (correo,username,contraseña,nombre,apellidoP, apellidoM,telefono,edad,peso,altura,drID) values (@email,@username,@password,@name,@father, @mother,@cellphone, @age, @weight, @height, @DrId)",
+    addMedicine: "insert into Medicamento (tipo) values (@tipo)",
+    getMedicine: "select * from Medicamento",
+    insTimes: "insert into tiempos (fecha,hora) values (@fecha,@hora)",
+    getInfPaci: "EXEC ObtenerInformacionPacientes @doctorID = @ID"
     
     
 

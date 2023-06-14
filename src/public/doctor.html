@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bolic</title>
+    <link rel="stylesheet" href="doctor.css">
+</head>
+<body>
+    <div class="footer">
+        <ul class="lista">
+            <div class="title">
+                <li class="titulo">
+                    <a href="/" class="bi">bolic</a>
+                </li>
+            </div>
+            <div>
+                <li>
+                <audio class="custom-audio" src="/audio" autoplay loop></audio>
+                </li>
+            </div>
+            <div class="imagen">
+                <li>
+                    <a href="/game.html"><img src="/bolicH" class="bolic" alt=""></a>
+                </li>
+            </div>
+        </ul>
+    </div>
+    <div class="content">
+        <div class="info">
+            <div class="fi">
+                <h1 class="ola">Bolic Services</h1>
+                <h3 class="ola">¡Bienvenido Doctor(a)!</h3>
+                <p> Aquí podrás acceder a información detallada sobre tus pacientes 
+                    Estamos comprometidos en proporcionarte las herramientas necesarias para que 
+                    puedas ofrecer un cuidado de calidad a tus pacientes. 
+                    ¡Gracias por confiar en nuestra plataforma!.</p>
+            </div>
+            
+            <input type="text" id="searchInput" class="search-input" placeholder="Buscar por apellido">
+            <button onclick="search()" class="search-button">Buscar</button>
+            <div id="searchResults" class="search-results"></div>
+            <div id="detailsContainer" class="details-container"></div>
+
+
+            <div class="do">
+                <div id="detailsContainer"></div>
+            </div>
+
+        </div>
+        
+        <script>
+          // Obtiene el valor del parámetro "username" de la URL
+          const queryString = window.location.search;
+          const urlParams = new URLSearchParams(queryString);
+          const jsonData = urlParams.get("username");
+        
+          let data = [];
+          
+          if (jsonData) {
+            data = JSON.parse(decodeURIComponent(jsonData));
+          }
+        
+        function search() {
+            const searchInput = document.getElementById('searchInput').value.toLowerCase();
+            const searchResults = document.getElementById('searchResults');
+            searchResults.innerHTML = '';
+        
+            let filteredData = [];
+
+            if (searchInput === '') {
+                filteredData = data; // Display all doctors if search input is empty
+            } else {
+                filteredData = data.filter(
+                persona =>
+                    persona.apellidoP.toLowerCase().includes(searchInput) ||
+                    persona.apellidoM.toLowerCase().includes(searchInput)
+                );
+            }
+
+            filteredData.forEach(persona => {
+                const resultItem = document.createElement('div');
+                resultItem.innerHTML = `<p>${persona.nombre} ${persona.apellidoP} ${persona.apellidoM}</p>`;
+                resultItem.addEventListener('click', () => showDetails(persona));
+                searchResults.appendChild(resultItem);
+            });
+        }
+        
+        function showDetails(persona) {
+            //alert(`Nombre: ${persona.nombre}\nApellido paterno: ${persona.apellidoP}\nApellido materno: ${persona.apellidoM}\nCorreo: ${persona.correo}\nEnfermedad: ${persona.enfermedad}\nMedicamento: ${persona.medicamento}`);
+            const detailsContainer = document.getElementById('detailsContainer');
+            detailsContainer.innerHTML = `
+            <div class="details">
+            <h2>Detalles del paciente</h2>
+            <p><strong>Nombre:</strong> ${persona.nombre}</p>
+            <p><strong>Apellido paterno:</strong> ${persona.apellidoP}</p>
+            <p><strong>Apellido materno:</strong> ${persona.apellidoM}</p>
+            <p><strong>Correo:</strong> ${persona.correo}</p>
+            <p><strong>Enfermedad:</strong> ${persona.enfermedad}</p>
+            <p><strong>Medicamento:</strong> ${persona.medicamento}</p>
+            </div>`;
+
+        }
+
+          
+        </script>
+        </body>
+        </html>
+        

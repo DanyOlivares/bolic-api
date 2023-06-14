@@ -4,6 +4,10 @@
 
 @prueba=http://localhost:3000/userprueba
 
+@medicines= http://localhost:3000/Medicamento 
+
+@tiempos= http://localhost:3000/tiempos
+
 GET {{prueba}}
 
 ###
@@ -16,9 +20,9 @@ POST {{api}}
 Content-Type: application/json
 
 {
-    "correo": "svfgh@gmail.com",
-    "username": "fdg",
-    "contraseña" : "hg"
+    "correo": "fsfdfs@gmail.com",
+    "username": "sffsfs",
+    "contraseña" : "sffshg"
 }
 
 
@@ -26,18 +30,18 @@ Content-Type: application/json
 GET {{api}}/1
 
 ###
-DELETE {{api}}/6
+DELETE {{api}}/2
 
 ###
 GET {{api}}/count
 
 
 ###
-PUT {{api}}/1002
+PUT {{api}}/1
 Content-Type: application/json
 
 {
-    "correo": "simituneado@gmail.com",
+    "correo": "simiteeuneado@gmail.com",
     "username": "saaa",
     "contraseña" : "similon"
 }
@@ -59,3 +63,19 @@ Content-Type: application/json
   "height": 175,
   "DrID": 1
 }
+
+### Medicina
+POST {{medicines}}
+Content-Type: application/json
+
+{
+  "medicine": "fenolftaleina"
+}
+
+
+###getMedicinas
+GET {{medicines}}
+
+
+###
+POST {{tiempos}}
